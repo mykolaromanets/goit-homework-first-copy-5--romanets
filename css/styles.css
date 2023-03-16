@@ -95,11 +95,6 @@ body {
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--main-bg-colour);
   border-bottom: 1px solid var(--footer-text-color);
 }
 
@@ -115,22 +110,25 @@ body {
   font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-list .link:hover,
 .header-list .link:focus {
   color: var(--btn-focus-color);
-}
-.link {
 }
 
 .link {
   position: relative;
 }
 
+.header-list .active {
+  color: var(--btn-focus-color);
+}
+
 .active::after {
   content: "";
   position: absolute;
-  top: 68px;
+  bottom: -1px;
   display: block;
   height: 4px;
   width: 100%;
@@ -152,6 +150,7 @@ address {
 
   line-height: 1.5;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-addres:hover,
@@ -166,9 +165,7 @@ address {
   margin: 0 auto;
   background-color: var(--main-title-colour);
   padding: 188px 0;
-  background-color: rgba(46, 47, 66, 0.7);
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   background-image: var(--bg-gradient-color), url(../images/people-office.jpg);
 
   background-repeat: no-repeat;
@@ -197,7 +194,7 @@ address {
 
   font-family: inherit;
   font-weight: 500;
-  font-size: 16px;
+
   line-height: 1.5;
   min-width: 169px;
   height: 56px;
@@ -205,6 +202,7 @@ address {
   border-radius: 4px;
 
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -271,7 +269,7 @@ address {
 .icon-border {
   width: 264px;
   height: 112px;
-  background: #f4f4fd;
+  background: var(--secondary-bg-color);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -280,7 +278,7 @@ address {
 }
 
 .services-icon {
-  width: 60px;
+  width: 64px;
   height: 64px;
 }
 
@@ -332,6 +330,7 @@ address {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-icon {
@@ -376,6 +375,7 @@ address {
 .customers-icon {
   width: 104px;
   height: 56px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Footer */
@@ -414,12 +414,6 @@ address {
 
 .social-networks-footer {
   margin-left: 120px;
-
-  /* display: flex;
-  flex-direction: column;
-  margin-left: 120px;
-  width: 208px;
-  height: 80px; */
 }
 
 .social-networks-footer-list {
@@ -436,6 +430,7 @@ address {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-icon {
@@ -471,21 +466,24 @@ address {
 .button-portfolio-link {
   color: var(--accent-colour);
   letter-spacing: 0.02em;
-  font-family: inherit;
+
   font-weight: 500;
-  font-size: 16px;
+  cursor: pointer;
   line-height: 1.5;
   padding: 12px 24px;
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--footer-text-color);
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portfolio-link:hover,
 .button-portfolio-link:focus {
   background-color: var(--btn-focus-color);
   color: var(--main-bg-colour);
-  cursor: pointer;
+
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -502,7 +500,9 @@ address {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
+.portfolio-list-item {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .portfolio-border {
   padding: 32px 0 32px 16px;
   border: 1px solid #e7e9fc;
@@ -516,6 +516,9 @@ address {
   transform: translate(0);
 }
 
+.porfoloio-link-item {
+}
+
 .card-wrap {
   position: relative;
   overflow: hidden;
@@ -524,8 +527,6 @@ address {
   position: absolute;
   top: 0;
   padding: 40px 32px 284px;
-  font-weight: 400px;
-  font-size: 16px;
   line-height: 1.5;
   color: var(--secondary-bg-color);
   background-color: var(--accent-colour);
@@ -534,7 +535,7 @@ address {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modal window */
+/* Modal page */
 
 .backdrop {
   position: fixed;
@@ -542,7 +543,8 @@ address {
   background-color: rgba(46, 47, 66, 0.4);
   width: 100%;
   height: 100%;
-  transition: opacity 400ms linear, visibility 300ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-page {
   position: relative;
@@ -554,24 +556,35 @@ address {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 400ms linear;
 }
 .backdrop.is-hidden > .modal-page {
   transform: translate(-50%, -50%) scale(0);
 }
 
-.close-icon {
-  padding: 8px 8px;
-  margin-top: 24px;
-  margin-right: 24px;
-  position: absolute;
-  top: 0;
-  right: 0;
+.modal-close-icon {
   width: 24px;
   height: 24px;
-  background-color: #e7e9fc;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--footer-text-color);
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  background-color: var(--btn-focus-color);
+  fill: var(--main-bg-colour);
+}
+
+.close-icon {
+  width: 8px;
+  height: 8px;
 }
 
 .is-hidden {
