@@ -136,8 +136,8 @@ body {
   background-color: var(--btn-focus-color);
 }
 
-.header-list .link:active {
-  color: #404bbf;
+.header-list .header-link:active {
+  color: var(--btn-focus-color);
 }
 
 address {
