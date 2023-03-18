@@ -365,7 +365,7 @@ address {
   justify-content: center;
   align-items: center;
   fill: #8e8f99;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list-link:is(:hover, :focus) {
@@ -517,9 +517,6 @@ address {
   transform: translate(0);
 }
 
-.porfoloio-link-item {
-}
-
 .card-wrap {
   position: relative;
   overflow: hidden;
@@ -573,7 +570,7 @@ address {
   background-color: var(--footer-text-color);
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
